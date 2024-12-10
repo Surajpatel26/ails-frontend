@@ -4,7 +4,7 @@ import robotImage from "../../assets/aboutus-image.png"; // Replace with your im
 
 const AboutSection = () => {
   return (
-    <div className="homeabout-section">
+    <div className="homepageabout-section">
       <div className="about-content">
         <h2 className="homeabout-heading">About Us</h2>
         <p className="about-text">

@@ -5,7 +5,7 @@ import WebinarPage from './layouts/WebinarPage';
 import AboutUsPage from './layouts/AboutUsPage';
 import AdminLayout from './Admin/AdminLayout/AdminLayout';
 
-const App = () => {
+const App = (props) => {
   return (
     <Router>
       <Routes>
@@ -15,6 +15,8 @@ const App = () => {
         <Route path="/admin/*" element={<AdminLayout />} />
       </Routes>
     </Router>
+    
+  
   );
 };
 
