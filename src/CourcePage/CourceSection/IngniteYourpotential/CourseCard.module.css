@@ -1,0 +1,120 @@
+.courseCard {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.courseCard:hover {
+  transform: scale(1.05);
+}
+
+.courseImage {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 0 0 8px;
+  flex-shrink: 0;
+}
+
+.courseDetails {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.courseDescription {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.courseDuration,
+.coursePrice {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.cardButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.registerButton,
+.downloadButton {
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.registerButton {
+  background-color: #4caf50;
+  color: white;
+}
+
+.downloadButton {
+  background-color: #2196f3;
+  color: white;
+}
+
+.downloadLink {
+  text-decoration: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .courseCard {
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  .courseImage {
+    width: 100%;
+    height: 200px;
+  }
+
+  .courseDetails {
+    padding: 15px;
+  }
+
+  .courseDescription {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .courseDuration,
+  .coursePrice {
+    font-size: 0.9rem;
+  }
+
+  .cardButtons {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .registerButton,
+  .downloadButton {
+    width: 100%;
+  }
+}
+
+/* Very Small Screens (Mobile Portrait) */
+@media (max-width: 480px) {
+  .courseDescription {
+    font-size: 0.9rem;
+  }
+
+  .courseDuration,
+  .coursePrice {
+    font-size: 0.8rem;
+  }
+}

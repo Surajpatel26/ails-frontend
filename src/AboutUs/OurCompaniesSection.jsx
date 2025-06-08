@@ -6,7 +6,7 @@ import ailsLogo from "../assets/ails.jpg"; // Replace with AILS logo path
 const OurCompaniesSection = () => {
   return (
     <div className="our-companies-section">
-      <h1 className="section-title">Our Initiatives</h1>
+      {/* <h1 className="section-title">Our Initiatives</h1> */}
       <p className="section-subtitle">
         We’re committed to providing innovative training solutions for learners of all ages through our two companies.
       </p>

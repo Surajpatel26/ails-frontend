@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Testimonial.css";
-import avatar1 from "../../assets/avatar1.jpg"; // Replace with actual image paths
+import avatar1 from "../../assets/avatar1.jpg"; 
 import avatar2 from "../../assets/avatar2.jpg";
 import avatar3 from "../../assets/avatar3.png";
 import avatar4 from "../../assets/avatar4.png";
-
 
 const Testimonial = () => {
   const testimonials = [
@@ -47,6 +46,27 @@ const Testimonial = () => {
     return () => clearInterval(interval);
   }, [testimonials.length]);
 
+  const [inView, setInView] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          setInView(true);
+        } else {
+          setInView(false);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
   const visibleTestimonials = [
     testimonials[currentIndex],
     testimonials[(currentIndex + 1) % testimonials.length],
@@ -55,8 +75,10 @@ const Testimonial = () => {
   return (
     <div className="testimonial-section">
       <h2 className="testimonial-heading">TESTIMONIALS</h2>
-      <div className="testimonial-slider">
-        <div className="testimonial-wrapper">
+      <div className="testimonial-slider" ref={ref}>
+        <div
+          className={`testimonial-wrapper ${inView ? "in-view" : "out-of-view"}`}
+        >
           {visibleTestimonials.map((testimonial, index) => (
             <div key={testimonial.id} className="testimonial-card">
               <div className="testimonial-image-container">

@@ -1,0 +1,70 @@
+/* AuthModal.css */
+.auth-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .auth-modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .auth-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .auth-modal-header h4 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .auth-modal-body {
+    margin-top: 20px;
+    font-size: 1.1rem;
+  }
+  
+  .auth-modal-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .auth-modal-footer button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .auth-modal-footer button:first-child {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .auth-modal-footer button:last-child {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .auth-modal-footer button:hover {
+    opacity: 0.9;
+  }
+  
+  .auth-modal-footer button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  

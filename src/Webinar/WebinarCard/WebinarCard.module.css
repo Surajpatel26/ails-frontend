@@ -1,0 +1,143 @@
+/* Webinar Section */
+.webinarSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.webinarSection h1 {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+/* Webinar Grid */
+.webinarGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Spacing between each webinar card */
+  width: 100%;
+}
+
+/* Webinar Card */
+.webinarCard {
+  display: grid;
+  grid-template-columns: 250px 1fr 200px; /* Image - Content - Details */
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.webinarCard:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Webinar Image */
+.webinarImage img {
+  width: 100%;
+  max-width: 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Webinar Content */
+.webinarContent {
+  flex: 1;
+  text-align: left;
+}
+
+.webinarContent h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #222;
+  font-weight: bold;
+}
+
+.webinarContent .description {
+  font-size: 1.5rem;
+  color: #555;
+  line-height: 1.6;
+  max-height: 120px; /* Ensures large descriptions don't break layout */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+}
+
+/* Webinar Details */
+.webinarDetails {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  width: 180px;
+}
+
+.webinarDetails .upcoming {
+  background-color: red;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.webinarDetails p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+  margin: 5px 0;
+}
+
+/* Register Button */
+.registerButtonWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.registerBtn {
+  background-color: #00c853;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.registerBtn:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .webinarCard {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    text-align: center;
+  }
+
+  .webinarImage img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .webinarDetails {
+    width: 100%;
+    margin-top: 15px;
+  }
+}

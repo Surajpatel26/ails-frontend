@@ -1,0 +1,43 @@
+/* Custom PrimeReact Carousel dot styles */
+.p-carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 8px;
+}
+
+.p-carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: background 0.3s ease;
+}
+
+.p-carousel-indicator.p-highlight {
+  background: #ffffff; /* Active dot color */
+}
+
+/* Optional hover effect */
+.p-carousel-indicator:hover {
+  background: #ffffff;
+  opacity: 0.8;
+}
+
+.p-items-hidden .p-carousel-item.p-carousel-item-active {
+  visibility: visible;
+  margin: 20px;
+}
+
+
+/* Responsive spacing (if needed) */
+@media (max-width: 768px) {
+  .p-carousel-indicators {
+    gap: 6px;
+  }
+
+  .p-carousel-indicator {
+    width: 8px;
+    height: 8px;
+  }
+}

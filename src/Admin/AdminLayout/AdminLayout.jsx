@@ -1,11 +1,20 @@
-import React from 'react'
+import React from 'react';
+import Sidebar from '../AdminSidebar/AdminSidebar';
+import Navbar from '../AdminNavbar/Adminnavbar';
+// import '../AdminLayout/adminLayout.css'
 
-const AdminLayout = () => {
+const Layout = ({ children }) => {
   return (
-    <div>
-      <h1>hello Shalini , Welcome to the Admin Panel</h1>
+    <div className="layout">
+      <Sidebar 
+       
+      />
+      <div className="main">
+        <Navbar />
+        {children}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default AdminLayout
+export default Layout;

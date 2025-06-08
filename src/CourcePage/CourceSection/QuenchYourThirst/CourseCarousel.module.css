@@ -1,0 +1,54 @@
+.courseCarousel {
+  /* margin-top: 38rem; */
+  width: 90%;
+  padding: 20px 0; /* Padding for spacing */
+  /* display: flex; */
+  /* grid-template-columns: column column ; */
+  justify-content: center;
+}
+
+.course-carousel-container {
+  padding: 0 1rem; /* Adds padding on left/right of carousel */
+  margin: 3rem auto;
+  max-width: 1280px;
+  box-sizing: border-box;
+}
+
+.course-slide {
+  padding: 1rem; /* Space between cards inside carousel */
+  box-sizing: border-box;
+}
+
+.slick-prev,
+.slick-next {
+  color: #fff;
+  z-index: 5;
+}
+
+.slick-dots li button:before {
+  color: #fff;
+  font-size: 10px;
+}
+
+.slick-slide {
+  padding: 10px; /* Adds space around each slide */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .courseCarousel {
+    margin-top: 20rem; /* Adjust top margin for tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .courseCarousel {
+    margin-top: 12rem; /* Adjust top margin for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .courseCarousel {
+    margin-top: 8rem; /* Adjust top margin for mobile */
+  }
+}

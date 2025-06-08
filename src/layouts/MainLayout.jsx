@@ -5,6 +5,7 @@ import HeroSection from '../HomePage/HeroSection/HeroSection'
 const MainLayout = () => {
   return (
     <div>
+     
       <Header/>
       <HeroSection/>
     </div>

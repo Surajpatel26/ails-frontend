@@ -1,0 +1,134 @@
+/* General Styling */
+.courseManagement {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-left: 15rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* Table Styling */
+.courseTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.courseTable th,
+.courseTable td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.courseTable th {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Image Styling */
+.courseImage {
+  display: block;
+  max-width: 50px;
+  max-height: 50px;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+/* Buttons */
+.addButton {
+  background-color: #4caf50;
+  color: #fff;
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background-color: #45a049;
+}
+
+.editButton {
+  background-color: #2196f3;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.editButton:hover {
+  background-color: #1976d2;
+}
+
+.deleteButton {
+  background-color: #f44336;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: #d32f2f;
+}
+
+/* Form Styling */
+.formContainer {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.formContainer h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.formContainer input,
+.formContainer select,
+.formContainer textarea {
+  width: calc(100% - 20px);
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+textarea {
+  height: 80px;
+}
+
+button[type="submit"] {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+button[type="button"] {
+  background-color: #f44336;
+  color: #fff;
+}
+
+button[type="button"]:hover {
+  background-color: #d32f2f;
+}

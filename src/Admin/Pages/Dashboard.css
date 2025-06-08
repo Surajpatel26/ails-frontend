@@ -1,0 +1,60 @@
+/* Dashboard.css */
+
+/* Main container holding both Sidebar and content */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f4f7fa;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  background-color: #1f2a44;
+  color: white;
+  padding-top: 20px;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.sidebar a:hover {
+  background-color: #444;
+  border-radius: 5px;
+}
+
+/* Main content area */
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+    height: auto;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+}

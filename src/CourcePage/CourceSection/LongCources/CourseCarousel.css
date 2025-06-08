@@ -1,0 +1,98 @@
+.course-carousel-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.loading-spinner,
+.error-message,
+.no-courses {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Desktop Carousel Styles */
+.desktop-carousel {
+  padding: 20px 0;
+}
+
+.course-slide {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Mobile Swiper Styles */
+.mobile-swiper-container {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.mobile-swiper {
+  padding: 10px 0 30px;
+  width: 100%;
+}
+
+.mobile-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-swiper .swiper-pagination {
+  position: relative;
+  margin-top: 15px;
+}
+
+.mobile-swiper .swiper-pagination-bullet {
+  background: #ccc;
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+}
+
+.mobile-swiper .swiper-pagination-bullet-active {
+  background: #007bff;
+}
+
+/* Tablet and larger mobile */
+@media (min-width: 480px) {
+  .mobile-swiper {
+    padding: 15px 0 40px;
+  }
+}
+
+/* PrimeReact Carousel Overrides */
+.p-carousel .p-carousel-indicators {
+  padding: 15px 0;
+}
+
+.p-carousel .p-carousel-indicator button {
+  background-color: #ccc;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+  transition: all 0.3s;
+}
+
+.p-carousel .p-carousel-indicator.p-highlight button {
+  background-color: #007bff;
+}
+
+.p-carousel .p-carousel-prev,
+.p-carousel .p-carousel-next {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.p-carousel .p-carousel-prev:hover,
+.p-carousel .p-carousel-next:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}

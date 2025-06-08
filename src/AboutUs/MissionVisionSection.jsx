@@ -1,7 +1,6 @@
 import React from "react";
 import "./MissionVisionSection.css";
 
-
 const MissionVisionSection = () => {
   return (
     <div className="vision-mission-section">
@@ -9,11 +8,15 @@ const MissionVisionSection = () => {
       <div className="vision-mission-image">
         {/* Overlay Rectangle with Mission and Vision */}
         <div className="vision-mission-overlay">
-          <h1>We believe in what people make possible</h1>
+          <h1 style={{color:'white'}}>We believe in what people make possible</h1>
           <p>
             Our mission is to empower every person and every organization on
             the planet to achieve more.
           </p>
+          {/* Contact Us Button */}
+          <a href="https://calendly.com/ytta" className="contact-button">
+            Contact Us
+          </a>
         </div>
       </div>
     </div>
@@ -21,4 +24,3 @@ const MissionVisionSection = () => {
 };
 
 export default MissionVisionSection;
-

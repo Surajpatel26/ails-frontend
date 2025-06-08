@@ -1,34 +1,101 @@
 .achievements-section {
-    text-align: center;
-    padding: 20px;
-    background: #fefae0;
-    border-radius: 8px;
-    margin: 20px auto;
-    max-width: 1200px;
+  text-align: center;
+  padding: 20px;
+  background: #fefae0;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/* Heading Styles */
+.achievements-heading {
+  font-size: 2rem;
+  color: #6a0572;
+  margin-bottom: 15px;
+}
+
+/* Description Styles */
+.achievements-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Achievements Grid */
+.achievements-grid {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+/* Achievements Images */
+.achievements-grid img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.achievements-grid img:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+  .achievements-section {
+      padding: 15px;
   }
   
   .achievements-heading {
-    font-size: 2rem;
-    color: #6a0572;
-    margin-bottom: 15px;
+      font-size: 1.8rem;
   }
   
   .achievements-description {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
+      font-size: 0.95rem;
   }
   
   .achievements-grid {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+      gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .achievements-heading {
+      font-size: 1.6rem;
   }
   
+  .achievements-description {
+      font-size: 0.9rem;
+  }
+
   .achievements-grid img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 70px;
+      height: 70px;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .achievements-section {
+      padding: 10px;
+  }
+
+  .achievements-heading {
+      font-size: 1.4rem;
+  }
+
+  .achievements-description {
+      font-size: 0.85rem;
+  }
+
+  .achievements-grid {
+      gap: 8px;
+  }
+
+  .achievements-grid img {
+      width: 60px;
+      height: 60px;
+  }
+}

@@ -1,0 +1,140 @@
+/* UploadPOC.module.css */
+
+/* Container */
+.container {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Heading */
+  .heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Form */
+  .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formLabel {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .formInput {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .formButton {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .formButton:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Progress Bar */
+  .progress {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .progressBar {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 4px;
+  }
+  
+  .progressFiller {
+    height: 10px;
+    background-color: #28a745;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+  
+  /* Message */
+  .message {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .success {
+    color: green;
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      margin: 10px;
+    }
+  
+    .heading {
+      font-size: 1.5rem;
+    }
+  
+    .formLabel {
+      font-size: 0.9rem;
+    }
+  
+    .formInput {
+      font-size: 0.9rem;
+    }
+  
+    .formButton {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      margin: 5px;
+    }
+  
+    .heading {
+      font-size: 1.25rem;
+    }
+  
+    .formLabel {
+      font-size: 0.85rem;
+    }
+  
+    .formInput {
+      font-size: 0.85rem;
+    }
+  
+    .formButton {
+      font-size: 0.85rem;
+    }
+  }
+  

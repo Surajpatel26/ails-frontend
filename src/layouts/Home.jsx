@@ -12,6 +12,7 @@ import YoutubeSection from './YoutubeSection'
 const Home = () => {
   return (
     <div>
+      
       <MainLayout/>
       <AboutusSection/>
       <OfferingsSection/>

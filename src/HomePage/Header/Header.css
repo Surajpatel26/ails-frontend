@@ -1,75 +1,182 @@
-/* General styling for the navbar */
+/* Navbar */
 .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #171717;
+  color: white;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+/* Search Box */
+.search-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-box {
+  position: relative;
+  width: 300px;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background: white;
+}
+
+.search-input input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.search-icon {
+  margin-right: 8px;
+  color: gray;
+}
+
+.loading-icon {
+  margin-left: 8px;
+  color: blue;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dropdown Results */
+.dropdown-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 5px 0;
+  z-index: 1000;
+}
+
+.dropdown-results li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dropdown-results li:hover {
+  background: #f0f0f0;
+}
+
+/* Navbar Links */
+.navbar-links {
+  display: flex;
+}
+
+.navbar-links ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links ul li {
+  margin: 0 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: transform 0.3s ease, font-weight 0.3s ease, color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  font-weight: bold;
+  transform: scale(1.1);
+  color: white;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.hamburger .bar {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .hamburger {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #171717; /* Black background */
-    color: white;
-    font-family: Arial, sans-serif;
   }
-  
-  .navbar-logo img {
-    height: 50px;
-    width: auto;
-  }
-  
-  /* Styling for navigation links */
-  .navbar-links ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar-links ul li {
-    margin: 0 80px; /* Add spacing between navigation links */
-    position: relative;
-  }
-  
-  .navbar-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    transition: transform 0.3s ease, font-weight 0.3s ease, color 0.3s ease;
-  }
-  
-  .navbar-links a:hover {
-    font-weight: bold;          /* Make text bold on hover */
-    transform: scale(1.1);      /* Slightly increase the size without affecting layout */
-    color: white;               /* Keep the text color white */
-  }
-  
-  /* Dropdown menu */
-  .navbar-links .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-  
-  .navbar-links .dropdown-menu {
+
+  .navbar-links {
     display: none;
+    flex-direction: column;
     position: absolute;
-    top: 100%;
+    top: 70px;
     left: 0;
-    background-color: #333;
-    border-radius: 5px;
-    list-style: none;
-    padding: 10px 0;
+    width: 100%;
+    background-color: #171717;
+    padding: 20px 0;
+    z-index: 10;
   }
-  
-  .navbar-links .dropdown-menu li {
-    margin: 0;
-    padding: 5px 20px;
+
+  .navbar-links.active {
+    display: flex;
   }
-  
-  .navbar-links .dropdown-menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
+
+  .navbar-links ul {
+    flex-direction: column;
+    width: 100%;
   }
-  
-  .navbar-links .dropdown-menu a:hover {
-    font-weight: bold;
-    transform: scale(1.1);
-    color: #00c8ff;
+
+  .navbar-links ul li {
+    margin: 10px 0;
+    text-align: center;
   }
-  
+
+  .search-container {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+}

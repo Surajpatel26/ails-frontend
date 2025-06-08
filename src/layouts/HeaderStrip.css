@@ -1,0 +1,87 @@
+.headerStrip {
+  width: 100%;
+  background-color: #171717;
+  color: white;
+  padding: 8px 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  overflow: hidden;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Container for all scrolling items */
+.scroll-container {
+  display: flex;
+  gap: 40px; /* Spacing between text blocks */
+  animation: ticker 10s linear infinite; /* Faster ticker speed */
+}
+
+/* Individual items (company name, email, extra text) do not have ticker animation now */
+.scroll-item {
+  display: inline-block;
+}
+
+/* Company name styling */
+.companyName {
+  font-size: 18px;
+  background: linear-gradient(90deg, rgb(200, 200, 100), rgb(200, 100, 100), rgb(100, 100, 200));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* Contact number styling */
+.contactNumber {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Additional text for desktop */
+.extraText {
+  font-size: 18px;
+  color: white;
+}
+
+/* Email icon styling */
+.emailIcon {
+  font-size: 20px;
+  color: white;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .headerStrip {
+    font-size: 12px; /* Smaller font size for mobile */
+  }
+
+  .companyName {
+    font-size: 14px; /* Smaller company name font */
+  }
+
+  .contactNumber {
+    font-size: 12px; /* Smaller contact number font */
+  }
+
+  .extraText {
+    display: none; /* Hide extra text on mobile */
+  }
+}
+
+/* Ticker animation keyframes */
+@keyframes ticker {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

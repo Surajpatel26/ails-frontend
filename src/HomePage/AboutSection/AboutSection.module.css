@@ -1,0 +1,130 @@
+/* General styling for the section */
+.homepageAboutSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1c1c1c; /* Dark background color */
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  margin: 110px auto; /* Increase margin for more gap from the previous section */
+  max-width: 1200px;
+  flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+/* About content */
+.aboutContent {
+  max-width: 55%; /* Adjust to make space for the image */
+  margin-right: 20px;
+}
+
+.homeAboutHeading {
+  font-size: 34px; /* Larger heading */
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: -10px; /* Shift heading slightly upward */
+  text-align: center;
+}
+
+.aboutText {
+  font-size: 22px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.aboutButton {
+  padding: 10px 20px;
+  background-color: #6a5acd; /* Lavender button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.aboutButton:hover {
+  background-color: #483d8b; /* Darker lavender on hover */
+}
+
+/* Image styling */
+.homeAboutImage {
+  position: relative; /* Required for positioning light rays */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -50px; /* Shift image closer to text */
+  margin-top: 20px; /* Space for mobile responsiveness */
+}
+
+.homeAboutImage img {
+  width: 220px; /* Adjust image size */
+  height: auto;
+  z-index: 2; /* Ensure the robot image stays above the light rays */
+}
+
+/* Light rays effect */
+.lightRays {
+  position: absolute;
+  top: calc(20% - 80px); /* Move rays slightly upward */
+  left: calc(45% - 130px); /* Adjust for center alignment */
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(
+    rgba(255, 223, 0, 0.5) 20%,
+    rgba(255, 223, 0, 0.1) 70%,
+    transparent 100%
+  ); /* Yellow light gradient */
+  border-radius: 50%;
+  z-index: 1;
+  animation: pulse 2s infinite; /* Pulsing light effect */
+  pointer-events: none;
+}
+
+/* Pulsing animation for the light */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .homepageAboutSection {
+    flex-direction: column; /* Stack content vertically */
+    padding: 20px;
+  }
+
+  .aboutContent {
+    max-width: 100%; /* Full width for text */
+    text-align: center; /* Center the text */
+    margin-right: 0;
+  }
+
+  .homeAboutImage {
+    margin-left: 0;
+    margin-top: 20px; /* Allow space between text and image */
+  }
+
+  .homeAboutImage img {
+    width: 150px; /* Smaller image size on mobile */
+  }
+
+  .lightRays {
+    top: calc(20% - 60px); /* Adjust light rays position */
+    left: 50%; /* Center the rays */
+    transform: translateX(-50%); /* Center light rays horizontally */
+  }
+}

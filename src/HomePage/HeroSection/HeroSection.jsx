@@ -1,41 +1,41 @@
 import React, { useState, useEffect } from "react";
-import "./HeroSection.css";
-import heroImage from "../../assets/hero-image.jpg"; // Adjust path as needed
+import styles from "./HeroSection.module.css"; // Import CSS Module
+import { AiOutlineAppstoreAdd, AiOutlineLaptop, AiOutlineCloud } from "react-icons/ai"; // Custom icons
+import heroImage1 from "../../assets/hero-image1.jpg"; // Adjust paths as needed
+import heroImage2 from "../../assets/hero-image2.jpg";
+import heroImage3 from "../../assets/hero-image3.jpg";
 
 const HeroSection = () => {
-  const [visibleHeading, setVisibleHeading] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const images = [heroImage1, heroImage2, heroImage3];
+  const headings = [
+    "Master Tomorrow’s Tech Today – Power Up with AI Learning Solutions!",
+    "Explore Cutting-Edge Courses to Transform Your Career!",
+    "Learn the Latest in Cloud, AI, and More!"
+  ];
+  const icons = [<AiOutlineAppstoreAdd />, <AiOutlineLaptop />, <AiOutlineCloud />];
 
-  // Cycle between headings every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setVisibleHeading((prev) => (prev === 0 ? 1 : 0)); // Toggle index
+      setCurrentIndex((prev) => (prev === 2 ? 0 : prev + 1)); // Cycle through 3 images
     }, 3000);
     return () => clearInterval(interval); // Cleanup
   }, []);
 
   return (
-    <div className="hero-section">
-      <img src={heroImage} alt="Hero Background" className="hero-image" />
-      <div className="hero-overlay">
-        {/* Heading Container */}
-        <div className="hero-heading-container">
-          <h1
-            className={`hero-heading ${
-              visibleHeading === 0 ? "visible" : "hidden"
-            }`}
-          >
-            Master Tomorrow’s Tech Today – <br />Power Up with AI Learning Solutions!
-          </h1>
-          <h1
-            className={`hero-heading ${
-              visibleHeading === 1 ? "visible" : "hidden"
-            }`}
-          >
-            Explore Cutting-Edge Courses to <br /> Transform Your Career!
-            <br />
-          </h1>
+    <div className={styles.heroSection}>
+      <img src={images[currentIndex]} alt="Hero Background" className={styles.heroImage} />
+      <div className={styles.heroOverlay}>
+        {/* Carousel Heading */}
+        <div className={styles.heroHeadingContainer}>
+          <h1 className={styles.heroHeading}>{headings[currentIndex]}</h1>
         </div>
-        <button className="hero-button">Explore our Courses!</button>
+        <button className={styles.heroButton}>Explore our Courses!</button>
+      </div>
+
+      {/* Custom Icon for Each Image */}
+      <div className={styles.iconContainer}>
+        {icons[currentIndex]}
       </div>
     </div>
   );

@@ -1,71 +1,95 @@
-import React from "react";
-import "./WebinarCard.css";
-import WebinarImage from "../../assets/webinar_card.png"; // Replace with your image path
-
-const webinars = [
-  {
-    title: "Learn POWER BI !",
-    description:
-      "Discover the power of data with our Power BI Webinar! Learn to transform raw data into actionable insights through dynamic dashboards and reports, guided by industry experts.",
-    date: "November",
-    time: "8:00 PM IST",
-    duration: "1:00 hour",
-    status: "UPCOMING",
-    image: WebinarImage,
-  },
-  {
-    title: "Learn Data Analytics !",
-    description:
-      "Get insights into data analytics techniques and tools to help you make data-driven decisions in your business.",
-    date: "December",
-    time: "6:00 PM IST",
-    duration: "1:30 hours",
-    status: "UPCOMING",
-    image: WebinarImage,
-  },
-  {
-    title: "Learn Microsoft 365 !",
-    description:
-      "Get insights into data analytics techniques and tools to help you make data-driven decisions in your business.",
-    date: "December",
-    time: "6:00 PM IST",
-    duration: "1:30 hours",
-    status: "UPCOMING",
-    image: WebinarImage,
-  },
-];
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import styles from "./WebinarCard.module.css";
 
 const WebinarCard = () => {
+  const [webinars, setWebinars] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const fetchWebinars = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/webinars");
+        if (response.data.success) {
+          setWebinars(response.data.webinars);
+        } else {
+          setError(response.data.message || "No webinars available.");
+        }
+      } catch (error) {
+        setError("Error fetching webinars.");
+        console.error("API Fetch Error:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchWebinars();
+  }, []);
+
+  if (loading) {
+    return <p className={styles.loading}>Loading webinars...</p>;
+  }
+
+  if (error) {
+    return <p className={styles.error}>{error}</p>;
+  }
+
   return (
-    
-    <div className="webinar-section">
-      <h1>Our Webinars</h1>
-      
-      {webinars.map((webinar, index) => (
-        <div
-          className={`webinar-card ${
-            index % 2 === 0 ? "webinar-card-normal" : "webinar-card-reverse"
-          }`}
-          key={index}
-        >
-          <div className="webinar-side webinar-details">
-            <button className="status">{webinar.status}</button>
-            <h3>{webinar.date}</h3>
-            <p>{webinar.time}</p>
-            <p>{webinar.duration}</p>
-          </div>
+    <div className={styles.webinarSection}>
+      <h1>Upcoming Webinars</h1>
+      <div className={styles.webinarGrid}>
+        {webinars.length === 0 ? (
+          <p>No webinars available.</p>
+        ) : (
+          webinars.map((webinar) => (
+            <div key={webinar.webinar_id} className={styles.webinarCard}>
+              {/* Image Section */}
+              <div className={styles.webinarImage}>
+                <img src={webinar.image_url} alt={webinar.title} />
+              </div>
 
-          <div className="webinar-center webinar-content">
-            <h2>{webinar.title}</h2>
-            <p>{webinar.description}</p>
-            <button className="register-btn">Register Now</button>
-          </div>
+              {/* Title and Description */}
+              <div className={styles.webinarContent}>
+                <h2>{webinar.title}</h2>
+                <p className={styles.description}>{webinar.description}</p>
+              </div>
 
-          <div className="webinar-side webinar-image">
-            <img src={webinar.image} alt={webinar.title} />
-          </div>
-        </div>
-      ))}
+              {/* Webinar Details */}
+              <div className={styles.webinarDetails}>
+                <span className={styles.upcoming}>UPCOMING</span>
+                <p>
+                  {new Date(webinar.launch_date).toLocaleDateString("en-US", {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
+                </p>
+                <p>
+                  {new Date(webinar.launch_date).toLocaleTimeString("en-US", {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}{" "}
+                  IST
+                </p>
+                <p>Duration: 1 Hour</p>
+              </div>
+
+              {/* Register Button */}
+              <div className={styles.registerButtonWrapper}>
+                <a
+                  href="https://forms.office.com/Pages/ResponsePage.aspx?id=CIucOnYmjEqmZbEylJ4-zvKBVJLcowNHpAJqsQIzQDZUOFlQWFJOOEVHM0xOMDNDQVNDTDVMTEkzVy4u&embed=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.registerBtn}
+                >
+                  Register Now
+                </a>
+              </div>
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 };

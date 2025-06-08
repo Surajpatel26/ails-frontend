@@ -1,0 +1,108 @@
+.courseCard {
+  width: 100%;
+  max-width: 480px; /* Maximum width for larger screens */
+  margin: 20px auto; /* Center the card on smaller screens */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.courseCard:hover {
+  transform: scale(1.05); /* Add a subtle hover effect */
+}
+
+.courseImage {
+  width: 100%; /* Ensure the image fits the card width */
+  height: 200px; /* Default height for smaller screens */
+  object-fit: cover; /* Ensure the image scales properly */
+}
+
+.courseDetails {
+  padding: 16px; /* Adjust padding for better spacing */
+  text-align: left;
+}
+
+.courseDescription {
+  font-size: 1rem; /* Use rem for responsive font sizes */
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.courseDuration,
+.coursePrice {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin: 6px 0;
+}
+
+.coursePrice {
+  color: red;
+}
+
+.cardButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.registerButton,
+.downloadButton {
+  padding: 10px 16px; /* Adjust button size */
+  font-size: 0.9rem; /* Responsive font size */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.registerButton {
+  background-color: #28a745;
+  color: white;
+}
+
+.downloadButton {
+  background-color: #007bff;
+  color: white;
+}
+
+.registerButton:hover,
+.downloadButton:hover {
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .courseCard {
+    width: 90%; /* Reduce width for tablets and smaller screens */
+  }
+
+  .courseImage {
+    height: 180px; /* Adjust image height */
+  }
+
+  .courseDescription {
+    font-size: 0.95rem; /* Slightly smaller font for compact layout */
+  }
+
+  .registerButton,
+  .downloadButton {
+    padding: 8px 12px; /* Smaller buttons */
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .courseCard {
+    width: 100%; /* Full width for mobile screens */
+  }
+
+  .courseImage {
+    height: 150px; /* Adjust image height */
+  }
+
+  .courseDescription {
+    font-size: 0.9rem; /* Smaller font for mobile */
+  }
+}

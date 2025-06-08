@@ -1,0 +1,129 @@
+/* General Styling */
+.webinar-management {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Table Styling */
+.webinar-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.webinar-table th,
+.webinar-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.webinar-table th {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.webinar-table img {
+    display: block;
+    max-width: 50px;
+    max-height: 50px;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+/* Buttons */
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.add-button {
+    background-color: #4caf50;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
+
+button:nth-child(1) {
+    background-color: #2196f3;
+    color: #fff;
+}
+
+button:nth-child(1):hover {
+    background-color: #1976d2;
+}
+
+button:nth-child(2) {
+    background-color: #f44336;
+    color: #fff;
+}
+
+button:nth-child(2):hover {
+    background-color: #d32f2f;
+}
+
+/* Form Styling */
+.form-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+textarea {
+    height: 80px;
+}
+
+button[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+button[type="button"] {
+    background-color: #f44336;
+    color: #fff;
+}
+
+button[type="button"]:hover {
+    background-color: #d32f2f;
+}

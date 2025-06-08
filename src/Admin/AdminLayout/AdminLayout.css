@@ -1,0 +1,31 @@
+/* Main Layout Styling */
+.layout {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+  }
+  
+  .main {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+  }
+  
+  /* Navbar and Sidebar Spacing */
+  .main .navbar,
+  .main .sidebar {
+    width: 100%;
+    padding: 15px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .layout {
+      flex-direction: column;
+    }
+  
+    .main {
+      margin-left: 0;
+    }
+  }
+  

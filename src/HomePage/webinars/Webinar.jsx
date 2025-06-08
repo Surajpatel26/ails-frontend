@@ -1,56 +1,94 @@
-import React, { useEffect, useState, useMemo } from "react";
-import "./Webinar.css";
-import webinar1 from "../../assets/webinar-1.jpg";
-import webinar2 from "../../assets/webinar-2.jpg";
-import webinar3 from "../../assets/webinar-3.jpg";
-import webinar4 from "../../assets/webinar-4.jpg";
-import webinar5 from "../../assets/webinar-5.jpg";
-import webinar6 from "../../assets/webinar-6.jpg";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Carousel } from "primereact/carousel"; // Import PrimeReact Carousel
+import "primereact/resources/themes/lara-light-indigo/theme.css"; // Import PrimeReact theme
+import "primereact/resources/primereact.min.css"; // Import PrimeReact core styles
+import "primeicons/primeicons.css"; // Import PrimeIcons
+import styles from "./Webinar.module.css";
 
 const Webinars = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const webinars = useMemo(() => [
-    { id: 1, title: "Learn Power BI", image: webinar1, description: "Discover the power of data visualization..." },
-    { id: 2, title: "Business Strategy", image: webinar2, description: "Discover strategies for success..." },
-    { id: 3, title: "Marketing Mastery", image: webinar3, description: "Master digital marketing techniques..." },
-    { id: 4, title: "AI and Analytics", image: webinar4, description: "Learn AI-driven analytics methods..." },
-    { id: 5, title: "Startup Secrets", image: webinar5, description: "Startup strategies and funding tips..." },
-    { id: 6, title: "Leadership Skills", image: webinar6, description: "Develop key leadership skills..." },
-  ], []);
+  const [webinars, setWebinars] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 3) % webinars.length);
-    }, 5000);
+    const fetchWebinars = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/webinars");
+        if (response.data.success) {
+          setWebinars(response.data.webinars);
+        } else {
+          setError("No webinars available.");
+        }
+      } catch (err) {
+        setError("Failed to load webinars.");
+        console.error("API Fetch Error:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    return () => clearInterval(interval);
-  }, [webinars.length]);
+    fetchWebinars();
+  }, []);
 
-  const visibleWebinars = useMemo(() => {
-    return webinars.slice(currentIndex, currentIndex + 3);
-  }, [currentIndex, webinars]);
+  if (loading)
+    return (
+      <div className={styles.loadingContainer}>
+        <div className={styles.spinner}></div>
+        <p>Loading webinars...</p>
+      </div>
+    );
 
-  return (
-    <div className="webinars-section">
-      <h2 className="webinars-heading">UPCOMING WEBINARS</h2>
-      <div className="webinars-carousel">
-        <div className="webinars-grid">
-          {visibleWebinars.map((webinar) => (
-            <div key={webinar.id} className="webinar-card">
-              <div className="image-container">
-                <img src={webinar.image} alt={webinar.title} className="webinar-image" loading="lazy" />
-              </div>
-              <div className="webinar-details">
-                <h3 className="webinar-title">{webinar.title}</h3>
-                <p className="webinar-description">{webinar.description}</p>
-                <button className="register-button">Register</button>
-              </div>
-            </div>
-          ))}
+  if (error) return <p className={styles.error}>{error}</p>;
+
+  const webinarTemplate = (webinar) => {
+    return (
+      <div className={styles.webinarCard}>
+        <div className={styles.imageContainer}>
+          <img
+            src={webinar.image_url}
+            alt={webinar.title}
+            className={styles.webinarImage}
+            loading="lazy"
+          />
+        </div>
+        <div className={styles.webinarDetails}>
+          <h3 className={styles.webinarTitle}>{webinar.title}</h3>
+          <p className={styles.webinarDescription}>
+            {webinar.description.length > 100
+              ? webinar.description.substring(0, 100) + "..."
+              : webinar.description}
+          </p>
+          <button className={styles.registerButton}>Register</button>
         </div>
       </div>
-      <button className="explore-button">Explore All</button>
+    );
+  };
+
+  return (
+    <div className={styles.webinarsSection}>
+      <h2 className={styles.webinarsHeading}>UPCOMING WEBINARS</h2>
+
+      <Carousel
+        value={webinars}
+        itemTemplate={webinarTemplate}
+        numVisible={3}
+        circular
+        autoplayInterval={5000}
+        responsiveOptions={[
+          {
+            breakpoint: "1024px",
+            numVisible: 2,
+          },
+          {
+            breakpoint: "600px",
+            numVisible: 1,
+          },
+        ]}
+        className={styles.webinarCarousel}
+      />
+
+      <button className={styles.exploreButton}>Explore All</button>
     </div>
   );
 };

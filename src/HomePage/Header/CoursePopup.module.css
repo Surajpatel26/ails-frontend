@@ -1,0 +1,188 @@
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 15px;
+}
+
+/* Modal Content */
+.modalContent {
+  background: white;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-height: 90vh;
+}
+
+/* Course Image */
+.courseImage {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* Modal Body */
+.modalBody {
+  padding: 24px;
+  overflow-y: auto;
+  max-height: 65vh;
+}
+
+/* Title */
+.courseTitle {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Description */
+.courseDescription {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Price */
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff;
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* Currency Toggle Button */
+.currencyToggle {
+  display: block;
+  width: 100%;
+  background: linear-gradient(45deg, #28a745, #218838);
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease;
+  margin: 15px 0;
+}
+
+.currencyToggle:hover {
+  background: linear-gradient(45deg, #218838, #1e7e34);
+  transform: scale(1.05);
+}
+
+/* Modal Buttons */
+.modalButtons {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
+  background: #f8f9fa;
+  border-top: 1px solid #ddd;
+}
+
+/* Buttons */
+.modalButton {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 0 5px;
+}
+
+/* Register Button */
+.register {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+}
+
+.register:hover {
+  background: linear-gradient(45deg, #0056b3, #003d82);
+}
+
+/* TOC Button */
+.modalButton:nth-child(2) {
+  background: linear-gradient(45deg, #ff9800, #ff6f00);
+}
+
+.modalButton:nth-child(2):hover {
+  background: linear-gradient(45deg, #ff6f00, #e65100);
+}
+
+/* Explore Button */
+.explore {
+  background: linear-gradient(45deg, #6f42c1, #4a2d91);
+}
+
+.explore:hover {
+  background: linear-gradient(45deg, #4a2d91, #311b6b);
+}
+
+/* Close Button */
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #ff4d4d;
+  color: white;
+  font-size: 18px;
+  padding: 7px 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: #cc0000;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modalContent {
+    width: 95%;
+    max-height: 92vh;
+  }
+
+  .modalBody {
+    max-height: 70vh;
+  }
+
+  .modalButtons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modalButton {
+    width: 100%;
+  }
+
+  .closeBtn {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+}

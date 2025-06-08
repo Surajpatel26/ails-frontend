@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Offerings.css";
 import OfferingsCard from "./OfferingsCard";
 import quench from '../../assets/quench.jpg'
-import ignite from '../../assets/ignite.jpeg'
+import ignite from '../../assets/rocket_blue.png'
 import long from '../../assets/long.jpg'
 import custom from '../../assets/custom.jpg'
 

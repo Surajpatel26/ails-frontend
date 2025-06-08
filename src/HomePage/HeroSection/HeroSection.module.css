@@ -1,0 +1,120 @@
+.heroSection {
+  position: relative;
+  height: 500px; /* Adjust as needed for your layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: opacity 1s ease; /* Fade effect */
+}
+
+.heroOverlay {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  justify-content: flex-start;
+  text-align: left; 
+  color: white;
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  max-width: 1000px;
+  padding-left: 0px;
+  padding-top: 20px;
+}
+
+.heroHeadingContainer {
+  position: relative;
+  height: 120px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroHeading {
+  position: absolute;
+  width: 100%;
+  text-align: left;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.heroHeadingContainer h1 {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 1;
+}
+
+.heroButton {
+  margin-top: 50px;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #6a5acd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.heroButton:hover {
+  background-color: #483d8b;
+}
+
+.iconContainer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    height: 350px;
+  }
+
+  .heroOverlay {
+    width: 90%;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+
+  .heroHeading {
+    font-size: 24px;
+  }
+
+  .heroButton {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroHeading {
+    font-size: 20px;
+  }
+
+  .heroButton {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}

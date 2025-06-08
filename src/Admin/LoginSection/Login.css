@@ -1,0 +1,160 @@
+.login-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #1a1a1a, #333);
+    overflow: hidden;
+  }
+  
+  .login-form {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 350px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .login-form::after,
+  .login-form::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 120px;
+    background: linear-gradient(to right, #004d73, #00334e);
+    opacity: 0.8;
+    border-radius: 100% 100% 0 0;
+    animation: wave 8s infinite linear;
+    z-index: -1;
+  }
+  
+  .login-form::before {
+    background: linear-gradient(to right, #005082, #002b45);
+    animation: wave 8s infinite linear reverse;
+    top: auto;
+    bottom: -30px;
+  }
+  
+  @keyframes wave {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .login-form h2 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 24px;
+  }
+  
+  .login-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background: #222;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .login-form input::placeholder {
+    color: #aaa;
+  }
+  
+  .login-form button {
+    background: #f1c40f;
+    color: #000;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .login-form button:hover {
+    background: #d4ac0d;
+  }
+  
+  .message {
+    margin-top: 15px;
+    color: #e74c3c;
+    font-size: 14px;
+  }
+  
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .bubble {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    animation: move 15s infinite ease-in-out;
+    opacity: 0.6;
+  }
+  
+  .bubble:nth-child(1) {
+    left: 10%;
+    animation-duration: 10s;
+    animation-delay: 0s;
+  }
+  
+  .bubble:nth-child(2) {
+    left: 30%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+  }
+  
+  .bubble:nth-child(3) {
+    left: 50%;
+    animation-duration: 14s;
+    animation-delay: 4s;
+  }
+  
+  .bubble:nth-child(4) {
+    left: 70%;
+    animation-duration: 16s;
+    animation-delay: 6s;
+  }
+  
+  .bubble:nth-child(5) {
+    left: 90%;
+    animation-duration: 18s;
+    animation-delay: 8s;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translateY(100vh) scale(0.8);
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.6;
+      transform: translateY(50vh) scale(1);
+    }
+    100% {
+      transform: translateY(-10vh) scale(0.8);
+      opacity: 0;
+    }
+  }

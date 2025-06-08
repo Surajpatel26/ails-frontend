@@ -1,70 +1,168 @@
 .our-companies-section {
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-    margin-top: 10rem;
-  }
-  
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  margin-top: 10rem;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #292929;
+}
+
+.section-subtitle {
+  font-size: 1.3rem;
+  color: #3d3d3d;
+  margin-bottom: 40px;
+}
+
+/* Companies Container */
+.companies-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Company Card */
+.company-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 350px;
+  text-align: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.company-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Company Logo */
+.company-logo {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+/* Card Content */
+.company-card h2 {
+  font-size: 1.8rem;
+  color: #252525;
+  margin-bottom: 10px;
+}
+
+.company-description {
+  font-size: 1.2rem;
+  color: #3c3c3c;
+  line-height: 1.6;
+}
+
+/* Highlight Specific Cards */
+.company-card.highlighted {
+  border: 2px solid #4caf50; /* Highlight AILS */
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Focused Message */
+.focused-message {
+  margin-top: 40px;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
   .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #333;
+      font-size: 2.2rem;
   }
-  
+
   .section-subtitle {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 40px;
+      font-size: 1.2rem;
   }
-  
+
   .companies-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
+      gap: 30px;
   }
-  
+
   .company-card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    text-align: left;
-    transition: transform 0.3s;
+      width: 90%;
+      max-width: 320px;
   }
-  
-  .company-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .company-logo {
-    width: 100px;
-    margin-bottom: 15px;
-  }
-  
+
   .company-card h2 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 10px;
+      font-size: 1.6rem;
   }
-  
+
   .company-description {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.6;
+      font-size: 1.1rem;
   }
-  
-  .company-card.highlighted {
-    border: 2px solid #4caf50; /* Highlight AILS */
-    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+@media (max-width: 768px) {
+  .our-companies-section {
+      padding: 50px 15px;
   }
-  
-  .focused-message {
-    margin-top: 40px;
-    font-size: 1.2rem;
-    color: #333;
-    font-weight: 500;
+
+  .section-title {
+      font-size: 2rem;
   }
-  
+
+  .section-subtitle {
+      font-size: 1.1rem;
+  }
+
+  .companies-container {
+      gap: 20px;
+  }
+
+  .company-card {
+      width: 100%;
+      max-width: 300px;
+  }
+
+  .company-card h2 {
+      font-size: 1.5rem;
+  }
+
+  .company-description {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .our-companies-section {
+      padding: 40px 10px;
+  }
+
+  .section-title {
+      font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+      font-size: 1rem;
+  }
+
+  .companies-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .company-card {
+      width: 95%;
+      max-width: 280px;
+  }
+
+  .company-card h2 {
+      font-size: 1.4rem;
+  }
+
+  .company-description {
+      font-size: 0.95rem;
+  }
+}

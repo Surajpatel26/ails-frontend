@@ -19,14 +19,14 @@ const HeroSection = () => {
       <div className="hero-overlay">
         {/* Heading Container */}
         <div className="hero-heading-container">
-          <h1
+          <h1 style={{color : "white"}}
             className={`hero-heading ${
               visibleHeading === 0 ? "visible" : "hidden"
             }`}
           >
             Master Tomorrow’s Tech Today – <br />Power Up with AI Learning Solutions!
           </h1>
-          <h1
+          <h1 style={{color : "white"}}
             className={`hero-heading ${
               visibleHeading === 1 ? "visible" : "hidden"
             }`}
