@@ -1,97 +1,50 @@
 /* General Card Styles */
 .offeringsCard {
   position: relative;
-  width: 45%; /* Adjust width for larger screens */
+  width: 45%;
   height: 350px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   transition: transform 1.5s ease, opacity 1.5s ease;
-  margin: 20px; /* Add some margin between cards */
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
-.offeringsCard.zoomOut {
-  animation: zoomOut 4s infinite ease-in-out;
-}
-
-.offeringsCard.zoomIn {
-  animation: zoomIn 4s infinite ease-in-out;
-}
-
-/* Zooming Animations */
-@keyframes zoomOut {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 0.7;
-  }
-  100% {
-    transform: translateX(-100%) scale(0.9);
-    opacity: 0;
-  }
-}
-
-@keyframes zoomIn {
-  0% {
-    transform: translateX(100%) scale(0.9);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Card Image Styles */
 .cardImage {
   width: 100%;
   height: 70%;
   object-fit: cover;
 }
 
-/* Card Content Styles */
 .cardContent {
   padding: 20px;
   text-align: center;
+  flex: 1;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
+/* Animations */
+.offeringsCard.zoomOut { animation: zoomOut 4s infinite ease-in-out; }
+.offeringsCard.zoomIn { animation: zoomIn 4s infinite ease-in-out; }
+
+@keyframes zoomOut { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.7; } 100% { transform: translateX(-100%) scale(0.9); opacity: 0; } }
+@keyframes zoomIn { 0% { transform: translateX(100%) scale(0.9); opacity: 0; } 50% { transform: scale(1.05); opacity: 0.8; } 100% { transform: scale(1); opacity: 1; } }
+
+/* Keep consistent size on all devices */
+@media (max-width: 1024px), (max-width: 768px), (max-width: 480px) {
   .offeringsCard {
-    width: 90%; /* Increase width for smaller screens */
-    height: 300px; /* Reduce height */
-    margin: 10px 0; /* Adjust margin for mobile */
+    width: 45%;
+    height: 350px;
+    margin: 20px;
   }
 
   .cardImage {
-    height: 30%;
-    width: 100%; /* Adjust the height of the image */
+    height: 70%;
   }
 
   .cardContent {
-    padding: 15px; /* Reduce padding on mobile */
-  }
-}
-
-@media (max-width: 480px) {
-  .offeringsCard {
-    width: 100%; /* Full width on very small screens */
-    height: 250px; /* Further reduce height */
-  }
-
-  .cardImage {
-    height: 55%; /* Reduce image height for very small screens */
-  }
-
-  .cardContent {
-    padding: 10px; /* Reduce padding further */
+    padding: 20px;
   }
 }

@@ -26,7 +26,7 @@ const ProfilePage = () => {
           return;
         }
 
-        const response = await axios.get("http://localhost:8080/api/admins/profile", {
+        const response = await axios.get("https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/admins/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

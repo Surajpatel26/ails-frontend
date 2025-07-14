@@ -53,8 +53,8 @@ const WebinarForm = ({ type, webinar, onClose, onSubmit }) => {
       }
 
       const url = type === "add" 
-        ? "http://localhost:8080/api/webinars" 
-        : `http://localhost:8080/api/webinars/${webinar.webinar_id}`;
+        ? "https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/webinars" 
+        : `https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/webinars/${webinar.webinar_id}`;
 
       const method = type === "add" ? "post" : "put";
 

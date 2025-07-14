@@ -27,7 +27,7 @@ const UploadPOC = () => {
 
     try {
       // Upload file to the backend (which will use Filestack)
-      const backendResponse = await axios.post('http://localhost:8080/api/upload-poc', formData, {
+      const backendResponse = await axios.post('https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/upload-poc', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

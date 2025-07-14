@@ -26,7 +26,7 @@ const AuthModal = ({ setIsAuthenticated }) => {
       }
 
       // Send both adminId and code to the backend
-      const response = await axios.post('http://localhost:8080/api/admins/check-code', {
+      const response = await axios.post('https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/admins/check-code', {
         adminId: adminId,
         code: codeInput,
       });

@@ -59,14 +59,14 @@ const CourseForm = ({ type, course, onClose, onSubmit }) => {
 
       let response;
       if (type === "add") {
-        response = await axios.post("http://localhost:8080/api/courses", formPayload, {
+        response = await axios.post("https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/courses", formPayload, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
         });
       } else {
         response = await axios.put(
-          `http://localhost:8080/api/courses/${course.course_id}`,
+          `https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/courses/${course.course_id}`,
           formPayload,
           {
             headers: {

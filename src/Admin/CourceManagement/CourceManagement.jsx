@@ -24,7 +24,7 @@ const CourseManagement = () => {
   const fetchCourses = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.get("http://localhost:8080/api/courses");
+      const response = await axios.get("https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/courses");
       setCourses(response.data);
     } catch (error) {
       console.error("Error fetching courses:", error);
@@ -40,7 +40,7 @@ const CourseManagement = () => {
 
   const confirmDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8080/api/courses/${courseToDelete}`);
+      await axios.delete(`https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/courses/${courseToDelete}`);
       // Instead of local state update, refresh from server
       await fetchCourses();
       setShowConfirmation(false);

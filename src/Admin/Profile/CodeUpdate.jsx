@@ -19,7 +19,7 @@ const CodeUpdate = () => {
       }
 
       // Send the PUT request to the backend with the new codes
-      const response = await axios.put('http://localhost:8080/api/code/update-code', {
+      const response = await axios.put('https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/code/update-code', {
         adminId: 2,  // You may replace this with a dynamic admin ID (or fetch it from state)
         newCodes: codesArray,  // Sending an array of codes
       });

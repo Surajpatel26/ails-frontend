@@ -22,7 +22,7 @@ const PasswordReset = () => {
       }
 
       await axios.post(
-        'http://localhost:8080/api/admins/update-profile',
+        'https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/admins/update-profile',
         { password: newPassword },
         { headers: { Authorization: `Bearer ${token}` } }
       );

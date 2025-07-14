@@ -14,7 +14,7 @@ function Login() {
     try {
       console.log("Sending login request with:", { email, password }); // Debug payload
   
-      const response = await fetch('http://localhost:8080/api/login', {
+      const response = await fetch('https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

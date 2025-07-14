@@ -21,7 +21,7 @@ const WebinarManagement = () => {
 
   const fetchWebinars = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/webinars");
+      const response = await axios.get("https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/webinars");
       setWebinars(response.data?.webinars || []);
     } catch (error) {
       console.error("Error fetching webinars:", error);
@@ -37,7 +37,7 @@ const WebinarManagement = () => {
   const confirmDelete = async () => {
     try {
       console.log("Deleting webinar with ID:", webinarToDelete);
-      await axios.delete(`http://localhost:8080/api/webinars/${webinarToDelete}`);
+      await axios.delete(`https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/webinars/${webinarToDelete}`);
       setWebinars((prev) => prev.filter((webinar) => webinar.webinar_id !== webinarToDelete));
       setShowConfirmation(false);
       setShowSuccess(true);

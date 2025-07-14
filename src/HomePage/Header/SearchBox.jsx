@@ -24,7 +24,7 @@ const SearchBox = () => {
     const fetchCourses = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`http://localhost:8080/api/search/courses?name=${searchTerm}`);
+        const response = await axios.get(`https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/search/courses?name=${searchTerm}`);
 
         if (Array.isArray(response.data) && response.data.length === 0) {
           setNoResults("No courses found.");

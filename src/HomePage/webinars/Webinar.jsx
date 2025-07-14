@@ -14,7 +14,9 @@ const Webinars = () => {
   useEffect(() => {
     const fetchWebinars = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/webinars");
+        const response = await axios.get(
+          "https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/webinars"
+        );
         if (response.data.success) {
           setWebinars(response.data.webinars);
         } else {

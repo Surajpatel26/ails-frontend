@@ -37,7 +37,7 @@ const CourseCarousel = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/courses');
+        const response = await fetch('https://apiailsbacked-eqc6f6dwgehhgtgh.centralindia-01.azurewebsites.net/api/courses');
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
